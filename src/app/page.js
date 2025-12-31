@@ -182,7 +182,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="col-6">
-                  <div className="glass-card p-4 text-center">
+                  <div className="glass-card p-4 text-center h-100">
                     <div className="mb-3" style={{ fontSize: "2rem" }}>
                       <FontAwesomeIcon icon={faRocket} />
                     </div>
@@ -193,7 +193,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="col-6">
-                  <div className="glass-card p-4 text-center">
+                  <div className="glass-card p-4 text-center h-100">
                     <div className="mb-3" style={{ fontSize: "2rem" }}>🤝</div>
                     <h6 className="fw-bold mb-2">Team Player</h6>
                     <p className="small mb-0" style={{ color: "var(--text-light)" }}>
