@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +22,43 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <nav className="navbar navbar-expand-lg glass-navbar" style={{
+          fontFamily: "var(--font-geist-sans)",
+          marginBottom: "2rem"
+        }}>
+          <div className="container">
+            <a className="navbar-brand fw-bold" href="#home" style={{ color: "var(--foreground)" }}>My Portfolio</a>
+            <button className="navbar-toggler glass-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav ms-auto">
+                <li className="nav-item">
+                  <a className="nav-link" href="#home" style={{ color: "var(--foreground)" }}>Home</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#about" style={{ color: "var(--foreground)" }}>About</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#skills" style={{ color: "var(--foreground)" }}>Skills</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#interests" style={{ color: "var(--foreground)" }}>Interests</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#contact" style={{ color: "var(--foreground)" }}>Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
         {children}
+        <Script 
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+          integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
